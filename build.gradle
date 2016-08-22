@@ -40,9 +40,6 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        flatDir {
-            dirs 'libs'
-}
     }
     dependencies {
         classpath 'be.jlr-home.gradle:plantumlPlugin:0.1.+'
@@ -70,12 +67,16 @@ mainClassName = theMainClass
 repositories {
     mavenLocal()
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
     compile     group: 'org.projectlombok'  , name: 'lombok'                            , version: lombokVersion
     compile     group: theGroup             , name: 'grools-reasoner'                   , version: groolsReasoner
-    compile     group: 'net.librec'         , name: 'librec'                            , version: librecVersion
+    //compile     group: 'net.librec'         , name: 'librec'                            , version: librecVersion
+    compile     name: 'librec-1.4'
     compile     group: 'commons-cli'        , name: 'commons-cli'                       , version: commonsCliVersion
     compile     group: 'org.apache.commons' , name: 'commons-csv'                       , version: commonsCSVVersion
     compile     group: 'ch.qos.logback'     , name: 'logback-classic'                   , version: logbackVersion
